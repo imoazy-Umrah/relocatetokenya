@@ -14,6 +14,7 @@ const LISTINGS=[
 const grid=document.getElementById('listings'),chips=document.querySelectorAll('.chip');
 let f='all';
 function draw(){
+ if(!grid)return;
  const list=LISTINGS.filter(l=>f==='all'||l.mode===f||l.type===f);
  grid.innerHTML=list.map(l=>`<article class="card"><div class="ph"><span>Photo placeholder</span></div><div class="body"><span class="tag">${l.loc} · For ${l.mode}</span><h3>${l.t}</h3><span class="price">${l.price}</span><div class="facts"><span>${l.bed} bed</span><span>${l.bath} bath</span><span>${l.furn}</span></div><span class="status">${l.avail} · ${l.ver}</span></div></article>`).join('')||'<p>No properties match this filter yet.</p>';
 }
