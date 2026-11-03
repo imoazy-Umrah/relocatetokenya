@@ -118,3 +118,32 @@ nav a{display:block;padding:10px 0}
 @media(max-width:560px){.dest-grid,.help-grid,.steps,.why ul{grid-template-columns:1fr}.f-grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:no-preference){.door{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}@keyframes rise{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0)}}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* coming soon states */
+.btn.disabled,.btn.disabled:hover{background:transparent;border:1.5px dashed var(--mute);color:var(--mute);cursor:not-allowed}
+.final .btn.disabled,.final .btn.disabled:hover{border-color:rgba(247,244,236,.5);color:rgba(247,244,236,.75)}
+.btn small,.off small{font-weight:500;font-size:.72rem;margin-left:.6em;opacity:.85}
+.soon-card{cursor:default}
+.off{opacity:.65;cursor:default}
+
+/* inner pages */
+.page-hero{padding:clamp(48px,7vw,96px) 0 clamp(32px,4vw,56px)}
+.page-hero h1{font-size:clamp(2.2rem,5vw,3.6rem)}
+.page-hero .lead{font-size:1.2rem;color:var(--mute);margin-top:1em}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,90px)}
+.two-col p+p{margin-top:1em}
+.values{list-style:none;padding:0}
+.values li{padding:16px 0;border-top:1px solid var(--line)}
+.values li:last-child{border-bottom:1px solid var(--line)}
+.values b{display:block;font:500 1.2rem var(--serif);color:var(--green)}
+.values span{color:var(--mute);font-size:.95rem}
+.methods{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.method{display:block;text-decoration:none;background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);padding:22px 24px;transition:border-color .2s}
+.method:hover{border-color:var(--green)}
+.method span{color:var(--mute);overflow-wrap:anywhere}
+.off-card{opacity:.6;border-top-style:dashed}
+.topics{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;margin:28px 0}
+.topics a{text-decoration:none;padding:18px 0;border-top:1px solid var(--line)}
+.topics a:hover h3{text-decoration:underline;text-decoration-color:var(--gold)}
+.topics p{font-size:.93rem;color:var(--mute)}
+@media(max-width:900px){.two-col{grid-template-columns:1fr}}
