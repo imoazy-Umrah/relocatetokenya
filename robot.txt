@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://relocatetokenya.co.ke/sitemap.xml
