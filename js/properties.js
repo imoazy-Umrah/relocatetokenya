@@ -12,12 +12,13 @@ const STATUS={available:'Available','under-offer':'Under offer',sold:'Sold'};
 function fmtDate(d){const x=new Date(d);return isNaN(x)?'':x.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'})}
 function card(p){
  const c=el('article','card');
- if(p.image){const i=el('img','p-img');i.src=p.image;i.alt=p.title+' in '+p.location;i.loading='lazy';c.append(i)}
+ if(p.image){const i=el('img','p-img');i.src=p.image;i.alt=p.title+' in '+p.location;i.loading='lazy';if(p.image_position)i.style.objectPosition=p.image_position;c.append(i)}
  else c.append(el('div','p-img p-noimg'));
  const b=el('div','body');
  b.append(el('span','tag',[p.location,p.type,p.mode==='rent'?'For rent':'For sale'].filter(Boolean).join(' · ')));
  b.append(el('h3',null,p.title));
  b.append(el('span','price',p.price?kes(p.price)+(p.mode==='rent'?' / month':''):'Price on request'));
+ if(p.price_usd)b.append(el('span','p-usd','About USD '+Number(p.price_usd).toLocaleString('en-US')));
  const f=el('div','facts');
  if(p.bedrooms!=null)f.append(el('span',null,p.bedrooms+' bed'));
  if(p.bathrooms!=null)f.append(el('span',null,p.bathrooms+' bath'));
