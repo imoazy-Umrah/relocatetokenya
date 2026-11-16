@@ -345,3 +345,16 @@ nav a{display:block;padding:10px 0}
 .sib-notification__icon{width:20px;height:20px;vertical-align:middle;margin-right:8px;fill:currentColor}
 
 @media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
+/* ============================================================
+   Properties page. Paste at the VERY END of /css/style.css
+   ============================================================ */
+.filters{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:28px}
+.filters[hidden],.empty-state[hidden]{display:none}
+.filters label{display:grid;gap:4px;font:600 .8rem var(--sans);color:var(--green)}
+.filters select{padding:.65em 1em;border:1.5px solid var(--line);background:#fff;font:400 .95rem var(--sans);color:var(--ink);border-radius:var(--r);min-width:170px}
+.p-img{width:100%;aspect-ratio:3/2;object-fit:cover;background:var(--green)}
+.p-desc{font-size:.93rem;color:var(--mute)}
+.card .btn{margin-top:auto;text-align:center}
+.card .status{margin-bottom:10px}
+.empty-state{max-width:640px;padding:clamp(28px,5vw,48px);background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold)}
+.empty-state h2{font-size:1.7rem}
