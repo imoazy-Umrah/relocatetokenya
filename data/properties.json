@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "id": "WT-001",
+    "title": "Watamu villa",
+    "location": "Watamu",
+    "type": "Villa",
+    "mode": "sale",
+    "price": 39015000,
+    "price_usd": 300000,
+    "image": "/images/properties/watamu.villa.webp",
+    "image_position": "top",
+    "description": "Villa in Watamu, shown with exterior and interior views.",
+    "status": "available",
+    "updated": "2026-11-16",
+    "whatsapp_text": "Hi, I am interested in the villa in Watamu, KES 39,015,000 (about USD 300,000). Ref WT-001."
+  }
+]
