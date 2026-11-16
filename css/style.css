@@ -358,3 +358,11 @@ nav a{display:block;padding:10px 0}
 .card .status{margin-bottom:10px}
 .empty-state{max-width:640px;padding:clamp(28px,5vw,48px);background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold)}
 .empty-state h2{font-size:1.7rem}
+/* Photo pop-up. Paste at the END of /css/style.css */
+.p-zoom{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;position:relative}
+.p-zoom::after{content:"View full photo";position:absolute;right:10px;bottom:10px;background:rgba(18,60,50,.85);color:#fff;font:600 .75rem var(--sans);padding:6px 10px;border-radius:var(--r)}
+.lightbox{border:0;padding:0;background:transparent;max-width:96vw;max-height:96vh;overflow:visible;margin:auto}
+.lightbox::backdrop{background:rgba(12,43,36,.9)}
+.lightbox img{display:block;max-width:96vw;max-height:84vh;width:auto;height:auto;object-fit:contain;background:#fff;margin:0 auto}
+.lb-cap{color:#F7F4EC;text-align:center;font-size:.9rem;margin:10px auto 0;max-width:none}
+.lb-close{position:absolute;top:10px;right:10px;background:var(--ivory);color:var(--green);border:0;padding:.5em 1em;font:600 .85rem var(--sans);border-radius:var(--r);cursor:pointer}
