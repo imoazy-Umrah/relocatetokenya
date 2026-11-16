@@ -1,0 +1,16 @@
+[
+  {
+    "id": "KZ-001",
+    "title": "3-bedroom apartment",
+    "location": "Mombasa, Kizingo",
+    "type": "Apartment",
+    "mode": "sale",
+    "price": 8000000,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "image": "/images/properties/kz-001.webp",
+    "description": "One or two short sentences about the property.",
+    "status": "available",
+    "updated": "2026-11-16"
+  }
+]
