@@ -298,3 +298,50 @@ nav a{display:block;padding:10px 0}
   .crumbs ol{font-size:.78rem}
   .faq summary{font-size:1rem;padding:16px 38px 16px 0}
 }
+
+/* ============================================================
+   Brevo contact form, styled to match the site.
+   Paste at the VERY END of /css/style.css
+   ============================================================ */
+.contact-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(28px,5vw,64px);align-items:start}
+.form-card{background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);padding:clamp(24px,4vw,40px)}
+.form-card h2{font-size:clamp(1.6rem,3vw,2rem);margin-bottom:.3em}
+.form-intro{color:var(--mute);margin-bottom:26px;font-size:.97rem}
+.contact-side{display:grid;gap:16px}
+.contact-side h2{font-size:1.5rem;margin-bottom:.2em}
+
+/* neutralise Brevo's own container styling */
+.contact-form .sib-form{background:none!important;padding:0!important;text-align:left!important}
+#sib-container{max-width:none!important;padding:0!important;background:none!important;border:0!important;text-align:left!important;font-family:var(--sans)}
+.f-row{padding:0 0 20px}
+
+/* labels, inputs */
+#sib-form .entry__label{display:block;font:600 .9rem var(--sans)!important;color:var(--green)!important;text-align:left!important;margin-bottom:6px}
+#sib-form .input{width:100%;padding:.8em 1em;border:1.5px solid var(--line);border-radius:var(--r);background:var(--ivory);font:1rem var(--sans);color:var(--ink);box-shadow:none}
+#sib-form textarea.input{min-height:130px;resize:vertical}
+#sib-form .input:focus{border-color:var(--green);outline:3px solid rgba(198,164,106,.45);outline-offset:0}
+#sib-form .input::placeholder{color:#8a9690;font-family:var(--sans);text-align:left}
+#sib-form .entry__specification{display:block;font:.82rem var(--sans)!important;color:var(--mute)!important;text-align:left!important;margin-top:6px}
+#sib-form .entry__error{font:.85rem var(--sans)!important;color:#8a2a1d!important;background:none!important;border:0!important;padding:0!important;margin-top:6px;text-align:left!important}
+.input--hidden{display:none!important}
+
+/* checkboxes */
+#sib-form .entry__choice{margin:0 0 8px}
+#sib-form .checkbox__label{display:flex;align-items:center;gap:10px;cursor:pointer;font:1rem var(--sans);color:var(--ink)}
+#sib-form .choice-text{font:1rem var(--sans);color:var(--ink);text-align:left}
+#sib-form .checkbox{border-color:var(--green)!important;border-radius:2px}
+#sib-form .input_replaced:focus-visible+.checkbox{outline:3px solid var(--gold);outline-offset:2px}
+
+/* button */
+#sib-form .sib-form-block__button{width:100%;padding:.95em 1.6em;background:var(--green)!important;color:var(--ivory)!important;border:1.5px solid var(--green)!important;border-radius:var(--r)!important;font:600 .95rem var(--sans)!important;cursor:pointer;text-align:center}
+#sib-form .sib-form-block__button:hover{background:var(--green-2)!important}
+.sib-hide-loader-icon{display:none}
+
+/* success / error messages */
+.sib-form-message-panel{display:none;font:.95rem var(--sans);padding:14px 16px;margin-bottom:20px;border:1px solid;border-radius:var(--r);max-width:none;text-align:left}
+.sib-form-message-panel--active{display:block}
+#error-message{color:#661d1d;background:#fdecea;border-color:#e0a79f}
+#success-message{color:#0f4a3a;background:#e8f3ee;border-color:#9ec7b8}
+.sib-notification__icon{width:20px;height:20px;vertical-align:middle;margin-right:8px;fill:currentColor}
+
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
