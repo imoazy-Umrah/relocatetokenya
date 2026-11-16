@@ -8,11 +8,16 @@ try{const r=await fetch('/data/properties.json',{cache:'no-cache'});data=await r
 data=(Array.isArray(data)?data:[]).filter(p=>p&&p.title);
 const kes=n=>'KES '+Number(n).toLocaleString('en-US');
 const el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
+const lb=document.createElement('dialog');lb.className='lightbox';
+const lbImg=document.createElement('img'),lbCap=el('p','lb-cap'),lbX=el('button','lb-close','Close');lbX.type='button';
+lb.append(lbImg,lbCap,lbX);document.body.append(lb);
+lb.addEventListener('click',()=>lb.close());
+function openLB(p){lbImg.src=p.image;lbImg.alt=p.title+' in '+p.location;lbCap.textContent=p.title+' · '+p.location;lb.showModal()}
 const STATUS={available:'Available','under-offer':'Under offer',sold:'Sold'};
 function fmtDate(d){const x=new Date(d);return isNaN(x)?'':x.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'})}
 function card(p){
  const c=el('article','card');
- if(p.image){const i=el('img','p-img');i.src=p.image;i.alt=p.title+' in '+p.location;i.loading='lazy';if(p.image_position)i.style.objectPosition=p.image_position;c.append(i)}
+ if(p.image){const i=el('img','p-img');i.src=p.image;i.alt=p.title+' in '+p.location;i.loading='lazy';if(p.image_position)i.style.objectPosition=p.image_position;const z=el('button','p-zoom');z.type='button';z.setAttribute('aria-label','View full photo: '+p.title);z.append(i);z.addEventListener('click',()=>openLB(p));c.append(z)}
  else c.append(el('div','p-img p-noimg'));
  const b=el('div','body');
  b.append(el('span','tag',[p.location,p.type,p.mode==='rent'?'For rent':'For sale'].filter(Boolean).join(' · ')));
