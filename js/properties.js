@@ -13,6 +13,28 @@ const lbImg=document.createElement('img'),lbCap=el('p','lb-cap'),lbX=el('button'
 lb.append(lbImg,lbCap,lbX);document.body.append(lb);
 lb.addEventListener('click',()=>lb.close());
 function openLB(p){lbImg.src=p.image;lbImg.alt=p.title+' in '+p.location;lbCap.textContent=p.title+' · '+p.location;lb.showModal()}
+const KEY='aef59eb2-b293-4996-8d7a-4e0ede1905c8';
+const enq=document.createElement('dialog');enq.className='enquiry';
+enq.innerHTML='<div class="enq-box"><button type="button" class="enq-x" aria-label="Close">Close</button><h3>Request details</h3><p class="enq-prop"></p><form class="enq-form"><label>Full name<input name="name" type="text" autocomplete="name" required></label><label>Email<input name="email" type="email" autocomplete="email" required></label><label>Phone or WhatsApp<input name="phone" type="tel" autocomplete="tel" required></label><label>Message (optional)<textarea name="message" rows="3"></textarea></label><input type="checkbox" name="botcheck" class="enq-bot" tabindex="-1" autocomplete="off"><button type="submit" class="btn">Send request</button><p class="enq-fine">We use your details only to reply to your enquiry.</p></form><p class="enq-status" role="status"></p></div>';
+document.body.append(enq);
+const eForm=enq.querySelector('form'),eProp=enq.querySelector('.enq-prop'),eStat=enq.querySelector('.enq-status'),eBtn=enq.querySelector('button[type=submit]');
+let cur=null;
+enq.querySelector('.enq-x').addEventListener('click',()=>enq.close());
+enq.addEventListener('click',e=>{if(e.target===enq)enq.close()});
+function openEnq(p){cur=p;eProp.textContent=p.title+' · '+p.location+(p.price?' · KES '+Number(p.price).toLocaleString('en-US'):'');eStat.textContent='';eStat.className='enq-status';eForm.hidden=false;enq.showModal()}
+eForm.addEventListener('submit',async e=>{
+ e.preventDefault();
+ const fd=new FormData(eForm);
+ const body={access_key:KEY,subject:'Property enquiry: '+cur.title+(cur.id?' ('+cur.id+')':''),from_name:'Relocate to Kenya website',name:fd.get('name'),email:fd.get('email'),phone:fd.get('phone'),message:fd.get('message')||'(no message)',property:cur.title,reference:cur.id||'',location:cur.location,price:cur.price?'KES '+Number(cur.price).toLocaleString('en-US'):'',botcheck:fd.get('botcheck')?true:false};
+ eBtn.disabled=true;eBtn.textContent='Sending...';
+ try{
+  const r=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(body)});
+  const d=await r.json();
+  if(!d.success)throw new Error();
+  eForm.reset();eForm.hidden=true;eStat.className='enq-status ok';eStat.textContent='Thank you. We have received your request and will be in touch soon.';
+ }catch(err){eStat.className='enq-status bad';eStat.textContent='Sorry, that did not send. Please try again or message us on WhatsApp.'}
+ eBtn.disabled=false;eBtn.textContent='Send request';
+});
 const STATUS={available:'Available','under-offer':'Under offer',sold:'Sold'};
 function fmtDate(d){const x=new Date(d);return isNaN(x)?'':x.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'})}
 function card(p){
@@ -37,7 +59,8 @@ function card(p){
   const msg=p.whatsapp_text||('Hi, I am interested in the '+(p.price?kes(p.price)+' ':'')+p.title+' in '+p.location+(p.id?' (Ref '+p.id+')':'')+'.');
   const a=el('a','btn sm','Enquire on WhatsApp');
   a.href='https://wa.me/'+WA+'?text='+encodeURIComponent(msg);a.target='_blank';a.rel='noopener';
-  b.append(a);
+  const r=el('button','btn ghost sm','Request details');r.type='button';r.addEventListener('click',()=>openEnq(p));
+  const act=el('div','p-actions');act.append(a,r);b.append(act);
  }
  c.append(b);return c;
 }
