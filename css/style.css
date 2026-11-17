@@ -366,3 +366,25 @@ nav a{display:block;padding:10px 0}
 .lightbox img{display:block;max-width:96vw;max-height:84vh;width:auto;height:auto;object-fit:contain;background:#fff;margin:0 auto}
 .lb-cap{color:#F7F4EC;text-align:center;font-size:.9rem;margin:10px auto 0;max-width:none}
 .lb-close{position:absolute;top:10px;right:10px;background:var(--ivory);color:var(--green);border:0;padding:.5em 1em;font:600 .85rem var(--sans);border-radius:var(--r);cursor:pointer}
+/* Request details pop-up. Paste at the END of /css/style.css */
+button.btn{font-family:inherit;cursor:pointer}
+.p-actions{display:grid;gap:10px;margin-top:auto}
+.p-actions .btn{margin-top:0;text-align:center}
+.enquiry{border:0;padding:0;background:transparent;width:min(94vw,480px);max-height:94vh;margin:auto;overflow:visible}
+.enquiry::backdrop{background:rgba(12,43,36,.88)}
+.enq-box{position:relative;background:#fff;border-top:3px solid var(--gold);padding:30px 28px 26px;max-height:92vh;overflow:auto}
+.enq-box h3{font-size:1.6rem;margin-bottom:.1em}
+.enq-prop{font-size:.92rem;color:var(--mute);margin-bottom:18px}
+.enq-x{position:absolute;top:12px;right:12px;background:none;border:0;color:var(--green);font:600 .85rem var(--sans);cursor:pointer;text-decoration:underline}
+.enq-form{display:grid;gap:14px}
+.enq-form[hidden]{display:none}
+.enq-form label{display:grid;gap:5px;font:600 .85rem var(--sans);color:var(--green)}
+.enq-form input:not(.enq-bot),.enq-form textarea{width:100%;padding:.75em .9em;border:1.5px solid var(--line);border-radius:var(--r);background:var(--ivory);font:400 1rem var(--sans);color:var(--ink)}
+.enq-form input:focus,.enq-form textarea:focus{border-color:var(--green);outline:3px solid rgba(198,164,106,.45)}
+.enq-bot{display:none!important}
+.enq-form .btn{width:100%}
+.enq-form .btn:disabled{opacity:.6;cursor:wait}
+.enq-fine{font-size:.8rem;color:var(--mute)}
+.enq-status{margin-top:4px;font-size:.95rem}
+.enq-status.ok{padding:14px 16px;background:#e8f3ee;border:1px solid #9ec7b8;color:#0f4a3a}
+.enq-status.bad{margin-top:12px;padding:12px 14px;background:#fdecea;border:1px solid #e0a79f;color:#661d1d}
