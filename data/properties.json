@@ -28,5 +28,20 @@
     "status": "available",
     "updated": "2026-11-24",
     "whatsapp_text": "Hi, I am interested in the villa in Karaba, KES 20,800,000 (about USD 160,000). Ref KRB-001."
+  },
+  {
+    "id": "SRT-001",
+    "title": "Sertun villa",
+    "location": "Sertun",
+    "type": "Villa",
+    "mode": "sale",
+    "price": 28600000,
+    "price_usd": 220000,
+    "image": "/images/properties/sertun.villa.webp",
+    "image_position": "top",
+    "description": "Villa in Sertun, shown with exterior and interior views.",
+    "status": "available",
+    "updated": "2026-11-24",
+    "whatsapp_text": "Hi, I am interested in the villa in Sertun, KES 28,600,000 (about USD 220,000). Ref SRT-001."
   }
 ]
