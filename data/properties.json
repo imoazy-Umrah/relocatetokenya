@@ -13,5 +13,20 @@
     "status": "available",
     "updated": "2026-11-16",
     "whatsapp_text": "Hi, I am interested in the villa in Watamu, KES 39,015,000 (about USD 300,000). Ref WT-001."
+  },
+  {
+    "id": "KRB-001",
+    "title": "Karaba villa",
+    "location": "Karaba",
+    "type": "Villa",
+    "mode": "sale",
+    "price": 20800000,
+    "price_usd": 160000,
+    "image": "/images/properties/karaba.webp",
+    "image_position": "top",
+    "description": "Villa in Karaba, shown with exterior and interior views.",
+    "status": "available",
+    "updated": "2026-11-24",
+    "whatsapp_text": "Hi, I am interested in the villa in Karaba, KES 20,800,000 (about USD 160,000). Ref KRB-001."
   }
 ]
