@@ -17,7 +17,7 @@
   {
     "id": "KRB-001",
     "title": "Karaba villa",
-    "location": "Karaba",
+    "location": "Watamu",
     "type": "Villa",
     "mode": "sale",
     "price": 20800000,
@@ -32,7 +32,7 @@
   {
     "id": "SRT-001",
     "title": "Sertun villa",
-    "location": "Sertun",
+    "location": "Watamu",
     "type": "Villa",
     "mode": "sale",
     "price": 28600000,
