@@ -17,7 +17,7 @@
   {
     "id": "KRB-001",
     "title": "Karaba villa",
-    "location": "Watamu",
+    "location": "Karaba",
     "type": "Villa",
     "mode": "sale",
     "price": 20800000,
@@ -32,16 +32,31 @@
   {
     "id": "SRT-001",
     "title": "Sertun villa",
-    "location": "Watamu",
+    "location": "Sertun",
     "type": "Villa",
     "mode": "sale",
     "price": 28600000,
     "price_usd": 220000,
-    "image": "/images/properties/sertun-villa.webp",
+    "image": "/images/properties/sertun.villa.webp",
     "image_position": "top",
     "description": "Villa in Sertun, shown with exterior and interior views.",
     "status": "available",
     "updated": "2026-11-24",
     "whatsapp_text": "Hi, I am interested in the villa in Sertun, KES 28,600,000 (about USD 220,000). Ref SRT-001."
+  },
+  {
+    "id": "WTP-001",
+    "title": "Watamu beach plot",
+    "location": "Watamu",
+    "type": "Land",
+    "mode": "sale",
+    "price": 150000000,
+    "price_usd": 1150000,
+    "image": "/images/properties/beachplot.webp",
+    "image_position": "top",
+    "description": "Prime beach plot in Watamu, offering an exceptional opportunity for development or a private coastal retreat.",
+    "status": "available",
+    "updated": "2026-11-27",
+    "whatsapp_text": "Hi, I am interested in the beach plot in Watamu, KES 150,000,000 (about USD 1,150,000). Ref WTP-001."
   }
 ]
