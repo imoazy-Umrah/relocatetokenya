@@ -1,11 +1,13 @@
 (async()=>{
 const WA='254706688115',grid=document.getElementById('props');
 if(!grid)return;
+const only=grid.dataset.estate||'';
 const empty=document.getElementById('empty'),bar=document.getElementById('filters');
 const sel={loc:document.getElementById('f-loc'),type:document.getElementById('f-type'),price:document.getElementById('f-price')};
 let data=[];
 try{const r=await fetch('/data/properties.json',{cache:'no-cache'});data=await r.json()}catch(e){}
 data=(Array.isArray(data)?data:[]).filter(p=>p&&p.title);
+if(only)data=data.filter(p=>p.estate===only);
 const kes=n=>'KES '+Number(n).toLocaleString('en-US');
 const el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
 const lb=document.createElement('dialog');lb.className='lightbox';
@@ -60,17 +62,17 @@ function card(p){
   const a=el('a','btn sm','Enquire on WhatsApp');
   a.href='https://wa.me/'+WA+'?text='+encodeURIComponent(msg);a.target='_blank';a.rel='noopener';
   const r=el('button','btn ghost sm','Request details');r.type='button';r.addEventListener('click',()=>openEnq(p));
-  const act=el('div','p-actions');act.append(a,r);b.append(act);
+  const act=el('div','p-actions');act.append(a,r);if(p.estate&&!only){const v=el('a','btn ghost sm','View more');v.href='/'+p.estate;act.append(v)}b.append(act);
  }
  c.append(b);return c;
 }
 function fill(s,vals){[...new Set(vals.filter(Boolean))].sort().forEach(v=>{const o=el('option',null,v);o.value=v;s.append(o)})}
 function draw(){
- const l=sel.loc.value,t=sel.type.value,m=Number(sel.price.value)||0;
+ const l=sel.loc?sel.loc.value:'',t=sel.type?sel.type.value:'',m=sel.price?Number(sel.price.value)||0:0;
  const list=data.filter(p=>(!l||p.location===l)&&(!t||p.type===t)&&(!m||(p.price&&p.price<=m)));
  grid.replaceChildren(...list.map(card));
  empty.hidden=list.length>0;
 }
-if(data.length){bar.hidden=false;fill(sel.loc,data.map(p=>p.location));fill(sel.type,data.map(p=>p.type));Object.values(sel).forEach(s=>s.addEventListener('change',draw))}
+if(data.length&&bar){bar.hidden=false;fill(sel.loc,data.map(p=>p.location));fill(sel.type,data.map(p=>p.type));Object.values(sel).forEach(s=>s.addEventListener('change',draw))}
 draw();
 })();
