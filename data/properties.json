@@ -88,5 +88,21 @@
     "updated": "2026-11-27",
     "estate": "bomayangu-nyali-mombasa-apartments",
     "whatsapp_text": "Hi, I am interested in the Bomayangu Apartments in Nyali, Mombasa. Ref BMY-001."
+  },
+    {
+    "id": "EVQ-001",
+    "title": "Evoque Apartments, Nyali",
+    "location": "Mombasa",
+    "type": "Apartment",
+    "mode": "sale",
+    "price": 0,
+    "price_usd": 0,
+    "image": "/images/properties/evoque.nyali.webp",
+    "image_position": "center",
+    "description": "Premium apartments at Evoque Nyali, Mombasa. Contact us for current availability and pricing.",
+    "status": "available",
+    "updated": "2026-11-28",
+    "estate": "evoque-nyali-mombasa-apartments",
+    "whatsapp_text": "Hi, I am interested in the Evoque Apartments in Nyali, Mombasa. Ref EVQ-001."
   }
 ]
