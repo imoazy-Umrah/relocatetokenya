@@ -58,5 +58,19 @@
     "status": "available",
     "updated": "2026-11-27",
     "whatsapp_text": "Hi, I am interested in the beach plot in Watamu, KES 150,000,000 (about USD 1,150,000). Ref WTP-001."
+  },
+  {
+    "id": "BXP-001",
+    "title": "Buxton Point apartments",
+    "location": "Mombasa",
+    "type": "Apartment",
+    "mode": "sale",
+    "image": "/images/properties/buxton-point.webp",
+    "image_position": "center",
+    "description": "Apartments at Buxton Point, Mombasa. Contact us for current availability and prices.",
+    "status": "available",
+    "updated": "2026-11-27",
+    "estate": "buxton-point-mombasa",
+    "whatsapp_text": "Hi, I am interested in the apartments at Buxton Point, Mombasa. Ref BXP-001."
   }
 ]
