@@ -72,5 +72,21 @@
     "updated": "2026-11-27",
     "estate": "buxton-point-mombasa",
     "whatsapp_text": "Hi, I am interested in the apartments at Buxton Point, Mombasa. Ref BXP-001."
+  },
+  {
+    "id": "BMY-001",
+    "title": "Bomayangu Apartments",
+    "location": "Nyali, Mombasa",
+    "type": "Apartment",
+    "mode": "sale",
+    "price": 0,
+    "price_usd": 0,
+    "image": "/images/properties/bomayangu.webp",
+    "image_position": "center",
+    "description": "Exclusive residences at Bomayangu in Nyali, Mombasa. Contact us for current availability and pricing.",
+    "status": "available",
+    "updated": "2026-11-27",
+    "estate": "bomayangu-nyali-mombasa-apartments",
+    "whatsapp_text": "Hi, I am interested in the Bomayangu Apartments in Nyali, Mombasa. Ref BMY-001."
   }
 ]
